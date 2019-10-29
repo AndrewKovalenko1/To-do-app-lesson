@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andrii Kovalenko">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3e7fbe437b.js" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800&display=swap" rel="stylesheet">
+    <title>To-do-app</title>
+    
+</head>
+
+<body>
+    <header></header>
+    <section>
+        <!--Left section first page-->
+        <div class="flex-center main-column green-bcolor" id="page1-left"> 
+            <!--Top of left section-->
+            <div class="header">
+                <p class="p-header">My Tasks</p>
+                <!--Dropdown menu-->
+                <div class="dropdown">
+                    <div class="dropbtn today" ><i class="far fa-clock"></i>&nbsp;<span id="dropbtn-when-tasks">Today</span>&nbsp;&nbsp; <i class="fas fa-sort-down"></i></div>
+                    <div class="dropdown-content" style="text-align-last: justify">
+                        <a data-name="Today" href="#" id="dropdown-today">Today 0</a>
+                        <a data-name="Future" href="#" id="dropdown-future">Future 0</a>
+                        <a data-name="Past" href="#" id = "dropdown-past">Past 0</a>
+                    </div>
+                </div>
+                <div class="task-counter" id='task-counter'>
+                    0 of 0
+                </div>
+            </div>
+            <!--Main window-->
+
+            <!--No task-->
+            <div class="flex-center no-task text-center" id = "no-task-section">
+                <i class="fas fa-calendar-alt fa-3x"></i>
+                <p class="font-size14" id="label-no-tasks">No tasks for today</p>
+            </div>
+
+            <!--Tasks-->
+            <div class="flex-center main-section1" id = "main-task-section">
+
+               <!-- <div class="task-section">
+                    <div class="icon-round text-center gray-border-color margin7">
+                        <span class="span-center"></span>
+                        <i class="fas fa-wrench fa-2x gray-icon"></i>
+                        <span class="span-center"></span>
+                    </div>
+                    <div class="width100 task-text">
+                        <p class="black-color margin-2-0">Clean appartment</p>
+                        <p class="gray-color margin-2-0">Home</p>
+                    </div>
+                    <div class="flex-center right-task-section">
+                        <p class="gray-color">All day</p>
+                        <div class="task-icon"><i class="fas fa-check"></i></div>
+                        <div class="task-icon"><i class="fas fa-trash-alt"></i></div>
+                    </div>
+                </div>
+                <div class="task-section">
+                    <div class="icon-round text-center red-border-color margin7">
+                        <span class="span-center"></span>
+                        <i class="fas fa-comments fa-2x vertical-align-middle red-color"></i>
+                        <span class="span-center"></span>
+                    </div>
+                    <div class="width100  task-text">
+                        <p class="gray-color line-through margin-2-0">Complete task</p>
+                        <p class="light-gray-color margin-2-0">Office</p>
+                    </div>
+                    <div class="flex-center right-task-section">
+                            <p class="gray-color line-through">All day</p>
+                            <div class="task-icon"><i class="fas fa-redo-alt"></i></div>
+                            <div class="task-icon"><i class="fas fa-trash-alt"></i></div>
+                    </div>
+                </div>
+                <div class="task-section"></div>
+                <div class="task-section"></div>
+                <div class="task-section"></div>
+                <div class="task-section"></div>
+                <div class="task-section"></div>-->
+            </div>
+            <!--Footer-->
+            <div class="footer-left">
+                <div class="filter-task">
+                    <label><input type="radio" name="filtask" value = "All" checked ><span>All</span></label>
+                    <label><input type="radio" name="filtask" value = "Done"><span>Done</span></label>
+                    <label><input type="radio" name="filtask" value = "Active"><span>Active</span></label>
+                </div>
+                <div class="filter-task2">
+                    <div class="task-icon"><i class="fas fa-check" id="action-all-tasks"></i></div>
+                    <div class="task-icon"><i class="fas fa-trash-alt" id="trash-all-tasks"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!--Right section first page-->
+        <div class="flex-center main-column red-bcolor page1-right" id="page1-right">
+            <div class="text-center">
+                <p class="hi">Hi!</p>
+                <p class="font-size14" id="hi-description">Nothing to do yet? Think about let's start!</p>
+                <button class="button1"  id="button-to-page-add-task">ADD TASK</button>
+            </div>
+        </div>
+
+         <!--Left section second page-->
+         <div class="flex-center main-column text-center red-bcolor page2-left" id="page2-left">
+            <p class="summary">Summary</p>
+            <!--Table with results-->
+            <table id="summary-table" class="table">
+                <tr>
+                    <td class="td-left" colspan="2">
+                        All things
+                    </td>
+                    <td class="td-right" id = "all-type-quantity">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left">
+                        Business
+                    </td>
+                    <td class="td-center">
+                        <i class="fas fa-circle fa-xs turquoise-color"></i>
+                    </td>
+                    <td class="td-right" id = "business-type-quantity">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left">
+                        Personal
+                    </td>
+                    <td class="td-center">
+                        <i class="fas fa-circle fa-xs yellow-color"></i>
+                    </td>
+                    <td class="td-right" id = "personal-type-quantity">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left">
+                        Family
+                    </td>
+                    <td class="td-center">
+                        <i class="fas fa-circle fa-xs blue-color"></i>
+                    </td>
+                    <td class="td-right"  id = "family-type-quantity">
+                        0
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-left" nowrap>
+                        Work
+                    </td>
+                    <td class="td-center">
+                        <i class="fas fa-circle fa-xs violet-color"> </i>
+                    </td>
+                    <td class="td-right"  id = "work-type-quantity">
+                        0
+                    </td>
+                </tr>
+            </table>
+            <button class="button1" id = "button-view-tasks">VIEW TASKS</button>
+        </div>
+
+        <div class="flex-center main-column green-bcolor page2-right" id="page2-right">
+            <div class="header">
+                <p class="p-header text-align-right">New Task</p>
+                <p class="text-align-right" id = "tasks-for-today2">0 task for today</p>
+            </div>
+            <div class="flex-center main-section2">
+                    <!--Button with dropdown-->
+                    <div class=" dropdown dropdown-main-button">
+                        <div class="dropdown-additional-button" id="dropdown-additional-button">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="flex-center icon-round text-center bcolor-almost-white gray-border-color dropbtn" id="task-icon-round">
+                            <span class="span-center"></span>
+                            <i class="fas fa-plus fa-2x gray-icon"  id="task-icon"></i>
+                            <!--<i class="fas fa-wrench fa-2x vertical-align-middle red-color" id="task-icon"></i>-->
+                            <span class="span-center"></span>
+                        </div>
+                            
+                        <div class="dropdown-content dropdown-borders">
+                            <div class="flex-center green-bcolor">
+                                <div class="arrow-up"></div>
+                            </div>
+                            <ul id = "icon-list">
+                                <li><a href="#" data-name = "fa-print" style="z-index: 5;"><i class="fas fa-print fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-comments"><i class="fas fa-comments fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-pen-nib"><i class="fas fa-pen-nib fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-map"><i class="fas fa-map fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-plane"><i class="fas fa-plane fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-car"><i class="fas fa-car fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-envelope"><i class="fas fa-envelope fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-user-friends"><i class="fas fa-user-friends fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-camera"><i class="fas fa-camera fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-headset"><i class="fas fa-headset fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-video"><i class="fas fa-video fa-lg blue-color"></i></a></li>
+                                <li><a href="#" data-name = "fa-briefcase"><i class="fas fa-briefcase fa-lg blue-color"></i></a></li>
+                            </ul>
+                        </div>
+                    
+                </div>
+                
+                
+                <form id = "form-add-task">
+                    <div class="dropdown form-menu-container">
+                        <input type="text" value="Business" class="dropbtn input-in-div2" disabled id="input-type-of-task">
+
+                        <span class="fas fa-circle fa-xs circle-position turquoise-color errspan" id="curr-type-of-task-icon"></span>
+
+                        <div class="dropdown-content" id = "type-task-dropdown">
+                            <div class="dropdown-blocks">
+                                <a href="#"  data-name="Business" data-color = "turquoise-color">
+                                    Business <i class="fas fa-circle fa-xs turquoise-color circle-menu-position"></i>
+                                </a>
+                            </div>
+                            <div class="dropdown-blocks">
+                                <a href="#" data-name="Personal" data-color = "yellow-color">
+                                    Personal <i class="fas fa-circle fa-xs yellow-color circle-menu-position"></i>
+                                </a>
+                            </div>
+                            <div class="dropdown-blocks">
+                                <a href="#" data-name="Family" data-color = "blue-color">
+                                    Family <i class="fas fa-circle fa-xs blue-color circle-menu-position"></i>
+                                </a>
+                            </div>
+                            <div class="dropdown-blocks">
+                                <a href="#" data-name="Work" data-color = "violet-color">
+                                    Work <i class="fas fa-circle fa-xs violet-color circle-menu-position"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="text" placeholder="What I have to do?*" id="input-what-to-do">
+                    <input type="text" placeholder="Where?*" id="input-where">
+                    <div class="date-container">
+                        <input type="text" onfocus="(this.type='date')" class="input-in-div" placeholder="When?*" id="input-when">
+                        <input type="text" onfocus="(this.type='time')" class="time-in-div" placeholder="What time?*" id="input-when-time">
+                        <!-- Rounded switch -->
+                        <div class="flex-center checkbox-container">
+                            <label class="switch">
+                                <input type="checkbox" checked id="all-day-checker">
+                                <span class="slider round"></span>
+                            </label> <span class="white-space-nowrap">&nbsp; All day</span>
+                        </div>
+                    </div>
+                    <span class="req-text"> *Required fields</span>
+                </form>
+                <div class = "div-btn-add-task" id="div-btn-add-task">
+                    <button class="button1 button-form-add-task" disabled id="button-add-task" type="submit" form = "form-add-task">ADD TASK</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="scripts_new.js"></script>
+</body>
+
+</html>

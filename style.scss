@@ -1,6 +1,8 @@
 
 /*----------------------Tags------------------------*/
-
+@import 'variables';
+@import 'section_task';
+@import 'toogle';
 html {
     height: 100%;
 }
@@ -8,7 +10,7 @@ html {
 body{
     height: 100%;
     margin: 0;
-    background-color: rgb(15,153,96);
+    background-color: $green-color;
 }
 section{
     display: flex;
@@ -38,22 +40,22 @@ form{
 /*---------------Single properties------------------*/
 
 .red-color{
-    color: rgb(139, 0, 0);
+    color:  $red-color;
 }
 .red-bcolor{
-    background-color: rgb(139, 0, 0);
+    background-color: $red-color;
 }
 .green-bcolor{
-    background-color:rgb(15,153,96);
+    background-color:$green-color;
 }
 .text-center{
     text-align: center;
 }
 .gray-color{
-    color: rgb(165, 175, 183);
+    color: $gray-color;
 }
 .light-gray-color{
-    color: rgb(185, 195, 203);
+    color: $light-gray-color;
 }
 .black-color{
     color: rgb(0,0,0);
@@ -65,7 +67,7 @@ form{
     text-align: right;
 }
 .bcolor-almost-white{
-    background-color: rgb(237, 237, 237);
+    background-color: $almost-white-color;
 }
 .line-through{
 text-decoration: line-through;
@@ -138,18 +140,18 @@ text-decoration: line-through;
     border-radius: 50% !important;
 }
 .gray-border-color{
-    border-color: rgb(165, 175, 183);
+    border-color: $gray-color;
 }
 .red-border-color{
-    border-color: rgb(139, 0, 0);
+    border-color: $red-color;
 }
 .gray-icon{
-    color: rgb(165, 175, 183);
+    color: $gray-color;
     vertical-align: middle;
 }
 .button1{
     border-radius: 5px;
-    background-color: rgb(139, 0, 0);
+    background-color:  $red-color;
     padding: 6px 12px;
     font-size: 15px;
     border-width: 1px;
@@ -231,7 +233,7 @@ text-decoration: line-through;
     display: none;
 }
 .task-icon:hover{
-    background-color: rgb(165, 175, 183); 
+    background-color: $gray-color; 
 }
 
 .task-icon{
@@ -316,7 +318,7 @@ input[type="text"], input[type="date"],input[type="time"]{
     margin: 5px 0px;
     min-height: 30px;
     border-radius: 8px;
-    background-color: rgb(237, 237, 237);
+    background-color: $almost-white-color;
     border: none;
     border-width: 0;
 }
@@ -349,12 +351,12 @@ input[type="text"], input[type="date"],input[type="time"]{
     margin-bottom: 5px;
 }
 .button-form-add-task{
-    background-color: rgb(15,153,96);
+    background-color: $green-color;
     border: none;
     width: initial;
 }
 .button-form-add-task-active{
-    background-color: rgb(139,0,0);
+    background-color:  $red-color;
     border: none;
     width: 100%;
 }
@@ -457,60 +459,6 @@ li {
     float: left;
 }
 
-/*-----------------Toogle---------------------*/
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-}
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-input:checked+.slider {
-    background-color: rgb(139, 0, 0);
-}
-input:focus+.slider {
-    box-shadow: 0 0 1px rgb(139, 0, 0);
-}
-input:checked+.slider:before {
-    -webkit-transform: translateX(16px);
-    -ms-transform: translateX(16px);
-    transform: translateX(16px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 24px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
 
 
 /*-----------------Footer buttons---------------------*/

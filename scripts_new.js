@@ -481,4 +481,5 @@
     ChooseTypeOfTask(event.target.dataset.name, event.target.dataset.color);
   });
   // ////////////////////Form navigation///////////////////////
+  //Some new
 }());

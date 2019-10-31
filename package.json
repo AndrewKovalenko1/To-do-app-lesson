@@ -1,0 +1,31 @@
+{
+  "name": "to-do-app-lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts_new.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "prettier": "^1.18.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndrewKovalenko1/To-do-app-lesson.git"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "lint": "eslint --ignore-path .gitignore ."
+}

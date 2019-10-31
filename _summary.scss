@@ -1,0 +1,26 @@
+@import 'media';
+.summary{
+    font-weight: 900;
+    font-size: 32px;
+}
+.table{
+    width: 100%;
+    padding: 5px;
+    border-spacing: 5px;
+    margin-bottom: 10px;
+    @include desktop{
+        padding: 5px 0px;
+        width: 95%;
+    }
+}
+.td-right{
+    width: 100%;
+    text-align: right;  
+}
+.td-left{
+    text-align:left;
+    position: relative;
+}
+.td-center{
+    text-align:left;
+}

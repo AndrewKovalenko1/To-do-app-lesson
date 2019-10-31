@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'media';
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    background-color: $green-color;
+}
+section{
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    @include desktop{
+        display: flex;
+        height: 100%;
+         flex-direction: column;
+    }
+}
+
+body, div, p, button{
+    
+    font-family: 'Montserrat',sans-serif;
+    color: white;
+    font-size: 13px;
+}
+td{
+    font-size: 15px;
+}
+form{
+    width:90%;
+    margin-bottom: 10px
+}

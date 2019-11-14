@@ -1,0 +1,6 @@
+@import 'variables';
+@mixin desktop{
+    @media screen and (max-width: #{$max-width-screen}) {
+        @content;
+    }
+}

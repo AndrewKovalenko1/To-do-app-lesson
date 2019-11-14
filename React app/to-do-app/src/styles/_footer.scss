@@ -1,0 +1,44 @@
+.filter-task {
+    position: absolute;
+    left: 4px; 
+    top:4px;
+    overflow: hidden;
+    label {
+        float:left;
+        margin:4px 1px;
+        span {
+            text-align:center;
+            font-size: 14px;
+            padding:5px 10px;
+            display:block;
+            border-radius:4px;
+            border:1px solid #D0D0D0;
+            &:hover {
+                color:white;
+                background-color: rgb(51, 51, 51);
+                cursor: pointer;
+            }
+        }
+        input {
+            margin:-10px;
+            position:absolute;
+            top:-20px;
+        }
+    }
+    input:checked + span {
+        color:black;
+        border:1px solid black;
+    }
+
+}
+.filter-task2 {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top:10px;
+    right: 12px;
+    color:black;
+    .task-icon{
+        display: block;
+    }
+}

@@ -1,0 +1,43 @@
+@import 'media';
+
+.task-counter{
+    position: absolute;
+    right: 0px;
+    top: 1vh;
+    background-color: white;
+    color: black;
+    padding: 3px 10px;
+    border-radius: 5px; 
+}
+
+/*Main Window*/
+.main-section1{
+    width: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: auto;   
+    justify-content: flex-start;
+    @include desktop{
+        width: 95%;
+        justify-content: flex-start;
+    }
+}
+.no-task{
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+
+.footer-left{
+    width: 100%;
+    min-height: 70px; 
+    position: relative;
+    
+}
+.hi{
+    font-weight: 900;
+    font-size: 48px; 
+    margin: 0;
+}

@@ -1,0 +1,44 @@
+@import 'variables';
+
+.task-section{
+    width: 95%;
+    min-height:60px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: row;     
+    flex-wrap: nowrap;
+    background-color: white; 
+    margin:5px 15px;
+    border-radius: 10px;   
+    padding: 5px;   
+    &:hover{
+        cursor: pointer;
+        .task-icon{
+            display: block;
+        }
+        .right-task-section > p{
+            display: none;
+        }
+    }          
+}
+.right-task-section{
+    min-width: 80px;
+}
+.task-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.task-icon{
+    border-radius:50%;
+    padding: 4px 5px;
+    margin: 1px;
+    color: black;
+    display: none;
+    &:hover{
+        background-color: $gray-color; 
+    }
+    &+.task-icon{
+        padding: 4px 6px;
+     }
+}

@@ -1,0 +1,62 @@
+@import 'variables';
+
+.red-color{
+    color:  $red-color;
+}
+.red-bcolor{
+    background-color: $red-color;
+}
+.green-bcolor{
+    background-color:$green-color;
+}
+.text-center{
+    text-align: center;
+}
+.gray-color{
+    color: $gray-color;
+}
+.light-gray-color{
+    color: $light-gray-color;
+}
+.black-color{
+    color: rgb(0,0,0);
+}
+.width100{
+    width: 100%;
+}
+.text-align-right{
+    text-align: right;
+}
+.bcolor-almost-white{
+    background-color: $almost-white-color;
+}
+.line-through{
+text-decoration: line-through;
+}
+.margin7{
+    margin:3px 7px;
+}
+.vertical-align-middle{
+    vertical-align: middle;
+}
+.turquoise-color{
+    color:rgb(0,199,199);
+}
+.yellow-color{
+    color:rgb(242,208,108);
+}
+.blue-color{
+    color:rgb(2,83,179);
+}
+.violet-color{
+    color:rgb(202,137,252);
+}
+.white-space-nowrap{
+    white-space: nowrap;
+}
+.margin-2-0{
+    margin:2px 0px;
+}
+.font-size14{
+    font-size:14px;
+}

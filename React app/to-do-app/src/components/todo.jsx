@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ButtonTo from "./buttonTo";
+import { ButtonTo } from "./buttonTo";
 import Title from "./title";
 import TimeDropdown from "./timeDropdown";
 import CounterTasksOnPage from "./counterTasksOnPage";
@@ -7,15 +7,21 @@ import NoTaskSection from "./noTaskSection";
 import StatusFilter from "./statusFilter";
 import ActionButton from "./actionButton";
 import Greetings from "./greetings";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as ApiService from "../api";
+
 class ToDo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { scheme: ["green-bcolor", "red-bcolor"] };
+  constructor() {
+    super();
+    this.state = { scheme: ["green-bcolor", "red-bcolor"], tasks: [] };
   }
-  nextPath(path) {
-    this.props.history.push(path);
+
+  componentDidMount() {
+    ApiService.getTasks().then(tasks => {
+      this.setState({ tasks: tasks.default });
+    });
   }
+
   render() {
     return (
       <section>
@@ -32,20 +38,14 @@ class ToDo extends Component {
             <div className="filter-task2">
               <ActionButton className="check" id="action-all-tasks" />
               <ActionButton className="trash-alt" id="trash-all-tasks" />
-              </div>
+            </div>
           </div>
         </div>
 
         <div className={"flex-center main-column " + this.state.scheme[1]}>
           <p className="hi">Hi!</p>
           <Greetings />
-          <ButtonTo
-            className="button1"
-            id="button-to-page-add-task"
-            text="ADD TASK"
-            path="/form"
-            history={this.props.history}
-          />
+          <ButtonTo className="button1" text="ADD TASK" path="/form" />
         </div>
       </section>
     );

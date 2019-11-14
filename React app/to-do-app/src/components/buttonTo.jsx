@@ -1,20 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
-class Button extends Component {
-    constructor(props) {
-        super(props);
-        this.goHome = this.goHome.bind(this);    
-   }
-   goHome() {
-    this.props.history.push(this.props.path);
-  }
-  render() {
-    return (
-      <button className={this.props.className} id={this.props.id} onClick = {this.goHome}>
-        {this.props.text}
-      </button>
-    );
-  }
-}
-
-export default Button;
+export const ButtonTo = props => {
+  return (
+    <Link className={props.className} to={props.path}>
+      {props.text}
+    </Link>
+  );
+};

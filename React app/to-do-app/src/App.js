@@ -11,7 +11,7 @@ library.add(fas);
 class App extends Component {
   componentDidMount() {
     // Fake data in localstorage
-    ApiService.createApi().then(() => console.log("task was created"));
+    ApiService.createApi().then(() => console.log("tasks was created"));
   }
 
   render() {

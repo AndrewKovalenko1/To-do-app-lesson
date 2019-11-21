@@ -1,14 +1,15 @@
-import React, { Component } from "react";
-class Toggle extends Component {
-    state = {  }
-    render() { 
-        return (  <div className="flex-center checkbox-container">
-        <label class="switch">
-            <input type="checkbox" checked id="all-day-checker"/>
+import React from "react";
+
+
+export const Toggle = props => {
+    return (
+        <div className="flex-center checkbox-container">
+        <label className="switch">
+            <input type="checkbox"defaultChecked onClick={() => props.onClick()}/>
             <span className="slider round"></span>
         </label> <span className="white-space-nowrap">&nbsp; All day</span>
-    </div> );
-    }
-}
- 
-export default Toggle;
+    </div>
+
+     
+    );
+  };

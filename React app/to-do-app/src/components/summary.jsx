@@ -1,61 +1,44 @@
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 class Summary extends Component {
-    state = {  }
-    render() { 
+    constructor(props) {
+        super(props);
+        this.state = {
+             allTasksValue: 0,
+        };
+          
+      }
+      componentDidMount() {
+         console.log(this.props.subjects);
+      } 
+     render() { 
         return ( <table id="summary-table" className="table">
             <tbody>
+      
         <tr>
             <td className="td-left" colSpan="2">
                 All things
             </td>
             <td className="td-right" id = "all-type-quantity">
-                0
+               {this.props.subjects.reduce((sum, current) => sum + current.value, 0)}
             </td>
         </tr>
-        <tr>
-            <td className="td-left">
-                Business
-            </td>
-            <td className="td-center">
-                <i className="fas fa-circle fa-xs turquoise-color"></i>
-            </td>
-            <td className="td-right" id = "business-type-quantity">
-                0
-            </td>
-        </tr>
-        <tr>
-            <td className="td-left">
-                Personal
-            </td>
-            <td className="td-center">
-                <i className="fas fa-circle fa-xs yellow-color"></i>
-            </td>
-            <td className="td-right" id = "personal-type-quantity">
-                0
-            </td>
-        </tr>
-        <tr>
-            <td className="td-left">
-                Family
-            </td>
-            <td className="td-center">
-                <i className="fas fa-circle fa-xs blue-color"></i>
-            </td>
-            <td className="td-right"  id = "family-type-quantity">
-                0
-            </td>
-        </tr>
-        <tr>
-            <td className="td-left" nowrap='true'>
-                Work
-            </td>
-            <td className="td-center">
-                <i className="fas fa-circle fa-xs violet-color"> </i>
-            </td>
-            <td className="td-right"  id = "work-type-quantity">
-                0
-            </td>
-        </tr>
+        {this.props.subjects.map(item=>{
+           return <tr key = {item.name}>
+              <td className="td-left">
+                   {item.name}
+             </td>
+             <td className="td-center">
+             <FontAwesomeIcon icon="circle" size="xs" className={item.color}/>
+             </td>
+             <td className="td-right">
+              {item.value}
+             </td>
+            </tr> 
+            }        
+         )
+        } 
         </tbody>
     </table> );
     }

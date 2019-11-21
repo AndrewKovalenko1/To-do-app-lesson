@@ -1,15 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CounterTasksOnPage extends Component {
-    state = { 
-        active: 0,
-        total:  0
-     }
-    render() { 
-        return (  <div className="task-counter" id='task-counter'>
-        {this.state.active} of {this.state.total}
-    </div> );
-    }
-}
- 
-export default CounterTasksOnPage;
+export const CounterTasksOnPage = props => {
+    let countOfAll = props.tasksToWiew.length;
+    let countoOfActive = props.tasksToWiew.filter(item=>item.status==="Active").length;
+  return (
+    <div className="task-counter" id='task-counter'>
+        {countoOfActive} of {countOfAll}
+    </div>
+  );
+};

@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 class StatusFilter extends Component {
-    state = {  }
-    render() { 
+    constructor(props) {
+        super(props);
+        this.state = {
+            statusArray: ["All","Done","Active"]
+        };
+        
+      }
+    
+      render() { 
         return ( 
         <div className="filter-task">
-            <label><input type="radio" name="filtask" value = "All" defaultChecked /><span>All</span></label>
-            <label><input type="radio" name="filtask" value = "Done" /><span>Done</span></label>
-            <label><input type="radio" name="filtask" value = "Active"/><span>Active</span></label>
-        </div>
+         {this.state.statusArray.map(status => (
+              <label key={status}><input type="radio" name="filtask" value = {status} defaultChecked = {(status === this.props.currentStatus)}
+              onChange={this.props.onChange} /><span>{status}</span></label>
+
+            ))}
+           </div>
          );
     }
 }

@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-class Task extends Component {
-    state = {  }
-    render() { 
-        return ( <div className="task-section">
-        <div className="icon-round text-center gray-border-color margin7">
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  
+export const Task = props => {
+  return (
+     <div className="task-section" key={props.task.id}>
+        <div className={`icon-round text-center margin7 ${(props.task.status==="Active")? " gray-border-color":" red-border-color"}`}>
             <span className="span-center"></span>
-            <i className="fas fa-wrench fa-2x gray-icon"></i>
+            <FontAwesomeIcon icon ={props.task.icon} size = "2x" className= {(props.task.status==="Active")?"gray-icon":"vertical-align-middle red-color"} />
             <span className="span-center"></span>
         </div>
         <div className="width100 task-text">
-            <p className="black-color margin-2-0">Clean appartment</p>
-            <p className="gray-color margin-2-0">Home</p>
+            <p className={`margin-2-0 ${(props.task.status==="Active")?" black-color":" gray-color line-through"}`} >{props.task.title}</p>
+            <p className={`margin-2-0 ${(props.task.status==="Active")?" gray-color":" light-gray-color"}`}>{props.task.place}</p>
         </div>
         <div className="flex-center right-task-section">
-            <p className="gray-color">All day</p>
-            <div className="task-icon"><i className="fas fa-check"></i></div>
-            <div className="task-icon"><i className="fas fa-trash-alt"></i></div>
+            <p className={`gray-color ${(props.task.status==="Active")?"":" line-through"}`}>{props.task.period}</p>
+            <div className="task-icon" onClick={props.actionOneTask}><FontAwesomeIcon icon={(props.task.status==="Active")?"check":"redo-alt"}/></div>
+            <div className="task-icon" onClick={props.deleteOneTask}><FontAwesomeIcon icon="trash-alt"/></div>
         </div>
-    </div> );
-    }
-}
- 
-export default Task;
+    </div>
+  );
+};

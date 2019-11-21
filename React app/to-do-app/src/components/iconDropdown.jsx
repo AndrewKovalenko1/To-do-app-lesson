@@ -6,29 +6,28 @@ class IconDropdown extends Component {
     super(props);
     this.state = {
       icons: ["print", "comments", "pen-nib", "map", "plane", "car"],
-      selectedIcon: "plus",
-      iconIsSelected: false
+      
     };
   }
 
-  handleClickOnIcon = iconName => {
+  /*handleClickOnIcon = iconName => {
     if (iconName) {
       this.setState({ selectedIcon: iconName });
       if (!this.state.iconIsSelected) this.setState({ iconIsSelected: true });
     }
-  };
-
+  };*/
+  
   render() {
     return (
       <div className=" dropdown dropdown-main-button">
-        <div className="dropdown-additional-button">
+      {this.props.currentIcon !=="plus" ?  <div className="dropdown-additional-button" >
           <FontAwesomeIcon icon="pencil-alt" />
-        </div>
-        <div className="flex-center icon-round text-center bcolor-almost-white gray-border-color dropbtn">
+        </div> : null}  
+        <div className= {"flex-center icon-round text-center bcolor-almost-white dropbtn " + (this.props.currentIcon ==="plus" ? " gray-border-color " : " red-border-color ")}>
           <span className="span-center"></span>
           <FontAwesomeIcon
-            icon={this.state.selectedIcon}
-            className={this.state.iconIsSelected ? "red-color" : "gray-icon"}
+            icon={this.props.currentIcon}
+            className={this.props.currentIcon ==="plus" ? "gray-color" : "red-color"}
             size="2x"
           />
           <span className="span-center"></span>
@@ -40,7 +39,7 @@ class IconDropdown extends Component {
           </div>
           <ul>
             {this.state.icons.map(icon => (
-              <IconItem onClick={this.handleClickOnIcon} iconName={icon} key={icon} />
+              <IconItem onClick={(icon)=>this.props.handleOnClickIcon(icon)} iconName={icon} key={icon} />
             ))}
           </ul>
         </div>

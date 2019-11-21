@@ -1,98 +1,122 @@
 [
   {
-    "icon": "faCoffee",
+    "subject": "Business",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "12am",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-20",
+    "status": "Active",
+    "id": 1
   },
   {
-    "icon": "faCar",
+    "subject": "Personal",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-18",
+    "status": "Active",
+    "id": 2
   },
   {
-    "icon": "faCoffee",
+    "subject": "Family",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "All day",
-    "date": "today",
-    "status": "done"
+    "date": "2019-11-03",
+    "status": "Done",
+    "id": 3
   },
   {
-    "icon": "faCar",
+    "subject": "Work",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-12-03",
+    "status": "Active",
+    "id": 4
   },
   {
-    "icon": "faCoffee",
+    "subject": "Work",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-19",
+    "status": "Active",
+    "id": 5
   },
   {
-    "icon": "faCar",
+    "subject": "Business",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-20",
+    "status": "Active",
+    "id": 6
   },
   {
-    "icon": "faCoffee",
+    "subject": "Family",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-20",
+    "status": "Active",
+    "id": 7
   },
   {
-    "icon": "faCar",
+    "subject": "Business",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-22",
+    "status": "Active",
+    "id": 8
   },
   {
-    "icon": "faCoffee",
+    "subject": "Business",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-22",
+    "status": "Active",
+    "id": 9
   },
   {
-    "icon": "faCar",
+    "subject": "Work",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-10-10",
+    "status": "Active",
+    "id": 10
   },
   {
-    "icon": "faCoffee",
+    "subject": "Business",
+    "icon": "coffee",
     "title": "Clean appartment",
     "place": "home",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-11",
+    "status": "Active",
+    "id": 11
   },
   {
-    "icon": "faCar",
+    "subject": "Business",
+    "icon": "car",
     "title": "Wash a car",
     "place": "street",
     "period": "All day",
-    "date": "today",
-    "status": "active"
+    "date": "2019-11-11",
+    "status": "Active",
+    "id": 12
   }
 ]

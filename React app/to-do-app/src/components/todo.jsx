@@ -11,6 +11,7 @@ import * as ApiService from "../api";
 import { Task } from "./task";
 import * as Functions from "../functions";
 
+
 class ToDo extends Component {
   constructor() {
     super();
@@ -24,15 +25,17 @@ class ToDo extends Component {
     };
   }
 
-  componentDidMount() {
+    componentDidMount() {
     ApiService.getTasks().then(tasks => {
-      this.setState(
-        { tasks: tasks.default === undefined ? tasks : tasks.default },
+      debugger
+     this.setState(
+        { tasks: Object.values(tasks.tasks2)},
         () => {
           this.filterTasks();
         }
       );
     });
+       
   }
 
   handleOnClickPeriod = period => {
@@ -97,7 +100,7 @@ class ToDo extends Component {
     let arrId = this.state.tasksToView.map(item => item.id);
     ApiService.editTasks(arrId, this.state.iconAction).then(tasks => {
       this.setState(
-        { tasks: tasks.default === undefined ? tasks : tasks.default },
+        { tasks:  tasks},
         () => {
           this.filterTasks();
         }
@@ -110,7 +113,7 @@ class ToDo extends Component {
 
     ApiService.editTasks(arrId, currAction).then(tasks => {
       this.setState(
-        { tasks: tasks.default === undefined ? tasks : tasks.default },
+        { tasks:  tasks},
         () => {
           this.filterTasks();
         }
@@ -124,7 +127,7 @@ class ToDo extends Component {
     let arrId = this.state.tasksToView.map(item => item.id);
     ApiService.deleteTasks(arrId).then(tasks => {
       this.setState(
-        { tasks: tasks.default === undefined ? tasks : tasks.default },
+        { tasks: tasks },
         () => {
           this.filterTasks();
         }
@@ -135,8 +138,9 @@ class ToDo extends Component {
     let arrId = [item.id];
 
     ApiService.deleteTasks(arrId).then(tasks => {
+      debugger
       this.setState(
-        { tasks: tasks.default === undefined ? tasks : tasks.default },
+        { tasks:  tasks },
         () => {
           this.filterTasks();
         }

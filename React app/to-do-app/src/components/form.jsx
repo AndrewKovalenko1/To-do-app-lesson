@@ -131,10 +131,11 @@ class Form extends Component {
   componentDidMount() {
     ApiService.getTasks().then(tasks => {
       this.onTodayCounterUpdate(
-        tasks.default === undefined ? tasks : tasks.default
+        Object.values(tasks.tasks2)
       );
-      this.onSummaryUpdate(tasks.default === undefined ? tasks : tasks.default);
+      this.onSummaryUpdate( Object.values(tasks.tasks2));
     });
+
   }
 
   render() {

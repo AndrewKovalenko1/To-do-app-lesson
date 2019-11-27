@@ -7,7 +7,8 @@
 
 # testing
 /coverage
-
+/Unit_tests
+/Jasmine
 # production
 /build
 

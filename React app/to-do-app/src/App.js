@@ -4,15 +4,20 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ToDo from "./components/todo";
 import Form from "./components/form";
-import * as ApiService from "./api";
+//import * as ApiService from "./api";
+
 
 library.add(fas);
 
 class App extends Component {
-  componentDidMount() {
+  constructor(props){
+    super(props);
+    
+  }
+ /* componentDidMount() {
     // Fake data in localstorage
     ApiService.createApi().then(() => console.log("tasks was created"));
-  }
+  }*/
 
   render() {
     return (

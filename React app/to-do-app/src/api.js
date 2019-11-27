@@ -18,8 +18,7 @@ export async function addTask(task) {
 
 
   const listref = database.child("tasks2");
-  debugger
-  const snapshot = await database.once("value");
+   const snapshot = await database.once("value");
   let snaphotVal = snapshot.val();
   let tasks = snaphotVal.tasks2;
 

@@ -27,8 +27,7 @@ class ToDo extends Component {
 
     componentDidMount() {
     ApiService.getTasks().then(tasks => {
-      debugger
-     this.setState(
+      this.setState(
         { tasks: Object.values(tasks.tasks2)},
         () => {
           this.filterTasks();
@@ -138,7 +137,6 @@ class ToDo extends Component {
     let arrId = [item.id];
 
     ApiService.deleteTasks(arrId).then(tasks => {
-      debugger
       this.setState(
         { tasks:  tasks },
         () => {
